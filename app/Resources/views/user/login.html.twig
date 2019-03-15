@@ -1,0 +1,31 @@
+{% extends 'tp/layout.html.twig' %}
+
+{% block main %}
+    {% if error %}
+        <div class="alert-danger">
+            {{ error.messageKey|trans(error.messageData('security')) }}
+        </div>
+    {% endif %}
+
+    <div class="col-sm-6 col-sm-offset-3">
+        <form action="" method="post">
+
+            <div class="form-group">
+                <label for="">Pseudo</label>
+                <input type="text" class="form-control" id="_username" name="_username" value="{{ lastUsername }}">
+            </div>
+            <div class="form-group">
+                <label for="">Mot de passe</label>
+                <input type="password" class="form-control" id="_password" name="_password">
+            </div>
+            <button type="submit">Se connecter</button>
+        </form>
+    </div>
+
+
+{% endblock %}
+
+{% block titre %}
+    - CONNEXION
+{% endblock %}
+

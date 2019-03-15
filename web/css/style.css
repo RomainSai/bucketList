@@ -1,0 +1,37 @@
+body{
+    height: 100%;
+    font-family: "ZCOOL QingKe HuangYou", sans-serif;
+}
+
+.main{
+    text-align: center;
+}
+
+.navbar{
+    background: #66dd66 !important;
+}
+
+.navbar-brand{
+    margin-left: 25px;
+}
+
+.content h2{
+    text-align: center;
+}
+
+.footer{
+    background: #66dd66 !important;
+}
+
+.footer p{
+    margin-bottom: 0px !important;
+}
+
+.content{
+    margin: 20px;
+}
+
+.idee{
+    padding: 5px;
+    border: 1px solid gray;
+}

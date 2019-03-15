@@ -1,0 +1,27 @@
+{% extends 'tp/layout.html.twig' %}
+
+{% block main %}
+    <h2>Liste des catégories existantes</h2>
+
+    {% for error in app.flashes('error') %}
+        <p class="alert alert-danger">
+            {{ error }}
+        </p>
+    {% endfor %}
+
+    {% for category in categories  %}
+        <p>{{ category.id }} - {{ category.name }}</p>
+        <a href="{{ path('admin_category_updateCategory', {'id':category.id}) }}">Modifier la catégorie</a>
+        <a href="{{ path('admin_category_deleteCategory', {'id':category.id}) }}">Supprimer la catégorie</a>
+    {% endfor %}
+    <br>
+    <a href="{{ path('admin_category_create') }}">Ajouter une catégorie</a>
+
+
+
+{% endblock %}
+
+{% block titre %}
+ - CATEGORIES
+{% endblock %}
+

@@ -1,0 +1,37 @@
+{% extends 'tp/layout.html.twig' %}
+
+{% block main %}
+    <div class="main">
+        <h2>Liste des idées</h2>
+        {% for category, messages in app.flashes  %}
+            {% for message in messages %}
+                <div class="alert alert-{{ category }}">
+                    {{ message }}
+                </div>
+            {% endfor%}
+        {% endfor%}
+        <div class="row">
+            <div class="col-sm-12">
+                {% for idea in ideas  %}
+                    <div class="idee col-sm-4">
+                        <ul>
+                            <li>{{ idea.getTitle }}</li>
+                            {#utilisation d'une ternaire si il a une catégorie de renseignée on affiche le nom de la catéogire sinon on affiche Aucune Catégorie #}
+                            <p>Catégorie : {{idea.categories?idea.categories.name:"Aucune Catégorie" }}</p>
+
+                            <a href="{{ path('idee_detail', {ideeId:idea.getId} ) }}">Voir le détail</a>
+                        </ul>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+
+    </div>
+
+{% endblock %}
+
+{% block titre %}
+ - IDEE
+{% endblock %}
+

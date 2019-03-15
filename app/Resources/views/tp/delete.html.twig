@@ -1,0 +1,18 @@
+{% extends 'tp/layout.html.twig' %}
+
+{% block main %}
+    <div class="row">
+        <div class="col-sm-4">
+            <h1>Supression de l'idée</h1>
+            <p>Etes vous sur de supprimer l'idée {{ idee.title }}</p>
+            {% form_theme form 'bootstrap_4_layout.html.twig' %}
+            {{ form(form) }}
+            <a href="{{ path('idee_idees') }}" class="btn btn-info">Annuler</a>
+        </div>
+    </div>
+{% endblock %}
+
+{% block titre %}
+
+{% endblock %}
+

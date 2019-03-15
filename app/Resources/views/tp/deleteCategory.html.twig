@@ -1,0 +1,18 @@
+{% extends 'tp/layout.html.twig' %}
+
+{% block main %}
+    <div class="row">
+        <div class="col-sm-6">
+            <h1>Supression de la catégorie</h1>
+            <p>Etes vous sur de supprimer la catégorie {{ category.name }}</p>
+            {% form_theme form 'bootstrap_4_layout.html.twig' %}
+            {{ form(form) }}
+            <a href="{{ path('admin_category_categories') }}" class="btn btn-info">Annuler</a>
+        </div>
+    </div>
+{% endblock %}
+
+{% block titre %}
+
+{% endblock %}
+
